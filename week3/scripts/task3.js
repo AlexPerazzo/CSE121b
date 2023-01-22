@@ -119,3 +119,4 @@ document.querySelector("#multiplied").textContent = numbers.map(number => number
 
 let double = numbers.map(number => number * 2);
 document.querySelector("#sumOfMultiplied").textContent = double.reduce((sum, number) => sum + number, 0)
+document.querySelector("#sumOfMultiplied").textContent = "hello";
