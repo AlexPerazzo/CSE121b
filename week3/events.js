@@ -2,7 +2,7 @@
 let tasks = [];
 
 function taskTemplate(task) {
-   return `<li ${task.completed ? 'class="strike"' : ""}>
+  return `<li ${task.completed ? 'class="strike"' : ""}>
    <p>${task.detail}</p>
    <div>
      <span data-function="delete">❎</span>
@@ -18,7 +18,7 @@ function renderTasks(tasks) {
   listElement.innerHTML = "";
   // loop through the tasks array. for each of them we need to add the HTML markup for a todo.
   const html = tasks.map(taskTemplate);
-  listElement.innerHTML = html.join("")
+  listElement.innerHTML = html.join("");
 }
 
 function newTask() {
@@ -61,14 +61,14 @@ function manageTasks(event) {
   console.log(event.currentTarget);
   // event.target will point to the actual icon clicked on. We need to get the parent li to work with however. HINT: Remember element.closest()? Look it up if you don't
   const parent = event.target.closest("li");
-  let doThis = event.target.dataset.function
-  
+  let doThis = event.target.dataset.function;
+
   if (doThis === "delete") {
-    removeTask(parent)
+    removeTask(parent);
   }
 
   if (doThis === "complete") {
-    completeTask(parent)
+    completeTask(parent);
   }
 
   // because we added 'data-function="delete"' to each icon in a task we can access a dataset property on our target
@@ -76,5 +76,5 @@ function manageTasks(event) {
 }
 
 // we need to attach listeners to the submit button and the list. Listen for a click, call the 'newTask' function on submit and call the 'manageTasks' function if either of the icons are clicked in the list of tasks.
-document.querySelector('#submitTask').addEventListener('click', newTask);
-document.querySelector('#todoList').addEventListener("click", manageTasks);
+document.querySelector("#submitTask").addEventListener("click", newTask);
+document.querySelector("#todoList").addEventListener("click", manageTasks);
