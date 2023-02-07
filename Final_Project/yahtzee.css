@@ -1,0 +1,12 @@
+#upper-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.score {
+    align-self: center;
+}
+
+body {
+    text-align: center;
+}
