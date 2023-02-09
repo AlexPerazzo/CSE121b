@@ -55,7 +55,5 @@ for (var i = 0; i < topScoreList.length; i++) {
 }
 
 for (var i = 0; i < botScoreList.length; i++) {
-  botScoreList[i].addEventListener("change", addBotScores, addGrandTotal);
+  botScoreList[i].addEventListener("change", addBotScores);
 }
-
-// document.querySelector("#bottom-total").addEventListener("change", addGrandTotal);
