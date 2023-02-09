@@ -3,10 +3,16 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.score {
+.topScore, .botScore {
     align-self: center;
+    margin-top: 7%;
 }
 
 body {
     text-align: center;
+}
+
+#lower-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
