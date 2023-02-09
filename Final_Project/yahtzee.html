@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yahtzee</title>
     <link rel="stylesheet" href="yahtzee.css" />
+    <script src="yahtzee.js" defer></script>
   </head>
   <body>
     <section id="upper-section">
@@ -15,27 +16,27 @@
 
       <div><h1>Aces</h1></div>
       <div><h1>Count and Add Only Aces</h1></div>
-      <div class="score" id="aces"><input type="number" /></div>
+      <div><input class="topScore" id="aces" type="number" value="0" /></div>
 
       <div><h1>Twos</h1></div>
       <div><h1>Count and Add Only Twos</h1></div>
-      <div class="score" id="twos"><input type="number" /></div>
+      <div><input class="topScore" id="twos" type="number" value="0" /></div>
 
       <div><h1>Threes</h1></div>
       <div><h1>Count and Add Only Threes</h1></div>
-      <div class="score" id="threes"><input type="number" /></div>
+      <div><input class="topScore" id="threes" type="number" value="0" /></div>
 
       <div><h1>Fours</h1></div>
       <div><h1>Count and Add Only Fours</h1></div>
-      <div class="score" id="fours"><input type="number" /></div>
+      <div><input class="topScore" id="fours" type="number" value="0" /></div>
 
       <div><h1>Fives</h1></div>
       <div><h1>Count and Add Only Fives</h1></div>
-      <div class="score" id="fives"><input type="number" /></div>
+      <div><input class="topScore" id="fives" type="number" value="0" /></div>
 
       <div><h1>Sixes</h1></div>
       <div><h1>Count and Add Only Sixes</h1></div>
-      <div class="score" id="sixes"><input id = "test" type="number" /></div>
+      <div><input class="topScore" id="sixes" type="number" value="0" /></div>
 
       <div><h1>Score</h1></div>
       <div><h1>--------------------></h1></div>
@@ -53,8 +54,7 @@
         <h4>Of Upper Section</h4>
       </div>
       <div><h1>--------------------></h1></div>
-      <div><h1 id="upper-total">0</h1></div>      
-
+      <div><h1 id="upper-total">0</h1></div>
     </section>
     <section id="lower-section">
       <div></div>
