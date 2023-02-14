@@ -2,8 +2,6 @@ var topScoreList = document.querySelectorAll(".topScore");
 var botScoreList = document.querySelectorAll(".botScore");
 
 function addTopScores() {
-
-
   let sum = parseInt(document.querySelector("#aces").value);
   let sum2 = parseInt(document.querySelector("#twos").value);
   let sum3 = parseInt(document.querySelector("#threes").value);
@@ -24,7 +22,7 @@ function addTopScores() {
 
   document.querySelector("#upper-total").textContent = total + bonus;
   document.querySelector("#upper-total2").textContent = total + bonus;
-  
+
   addGrandTotal();
 }
 
