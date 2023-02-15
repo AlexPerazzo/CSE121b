@@ -127,30 +127,22 @@ function displayDice() {
     document.querySelector("#first-die").innerHTML = html;
   }
 
-if (!document.querySelector("#second-die").classList.contains("saved")) {
-  html = generateDie();
-  document.querySelector("#second-die").innerHTML = html;
-}
-if (!document.querySelector("#third-die").classList.contains("saved")) {
-  html = generateDie();
-  document.querySelector("#third-die").innerHTML = html;
-}
-if (!document.querySelector("#fourth-die").classList.contains("saved")) {
-  html = generateDie();
-  document.querySelector("#fourth-die").innerHTML = html;
-}
-if (!document.querySelector("#fifth-die").classList.contains("saved")) {
-  html = generateDie();
-  document.querySelector("#fifth-die").innerHTML = html;
-}
-}
-
-for (var i = 0; i < topScoreList.length; i++) {
-  topScoreList[i].addEventListener("change", addTopScores);
-}
-
-for (var i = 0; i < botScoreList.length; i++) {
-  botScoreList[i].addEventListener("change", addBotScores);
+  if (!document.querySelector("#second-die").classList.contains("saved")) {
+    html = generateDie();
+    document.querySelector("#second-die").innerHTML = html;
+  }
+  if (!document.querySelector("#third-die").classList.contains("saved")) {
+    html = generateDie();
+    document.querySelector("#third-die").innerHTML = html;
+  }
+  if (!document.querySelector("#fourth-die").classList.contains("saved")) {
+    html = generateDie();
+    document.querySelector("#fourth-die").innerHTML = html;
+  }
+  if (!document.querySelector("#fifth-die").classList.contains("saved")) {
+    html = generateDie();
+    document.querySelector("#fifth-die").innerHTML = html;
+  }
 }
 
 function saveDie(thing, index) {
@@ -159,15 +151,32 @@ function saveDie(thing, index) {
 
 function resetDice() {
   savedList = document.querySelectorAll(".saved");
-  savedList.forEach(element => {
+  savedList.forEach((element) => {
     element.classList.remove("saved");
-
   });
-  document.querySelector("#first-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
-  document.querySelector("#second-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
-  document.querySelector("#third-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
-  document.querySelector("#fourth-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
-  document.querySelector("#fifth-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+  document.querySelector(
+    "#first-die"
+  ).innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`;
+  document.querySelector(
+    "#second-die"
+  ).innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`;
+  document.querySelector(
+    "#third-die"
+  ).innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`;
+  document.querySelector(
+    "#fourth-die"
+  ).innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`;
+  document.querySelector(
+    "#fifth-die"
+  ).innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`;
+}
+
+for (var i = 0; i < topScoreList.length; i++) {
+  topScoreList[i].addEventListener("change", addTopScores);
+}
+
+for (var i = 0; i < botScoreList.length; i++) {
+  botScoreList[i].addEventListener("change", addBotScores);
 }
 
 document.querySelector("#first-die").addEventListener("click", () => {
@@ -191,7 +200,6 @@ document.querySelector("#reset").addEventListener("click", () => {
 });
 
 document.querySelector("#reset-dice").addEventListener("click", resetDice);
-
 
 document.querySelector("#roll-dice").addEventListener("click", () => {
   displayDice();
