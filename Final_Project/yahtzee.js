@@ -1,5 +1,6 @@
 var topScoreList = document.querySelectorAll(".topScore");
 var botScoreList = document.querySelectorAll(".botScore");
+var allDice = document.querySelectorAll(".die-div");
 
 function addTopScores() {
   let sum = parseInt(document.querySelector("#aces").value);
@@ -88,14 +89,6 @@ function addGrandTotal() {
   document.querySelector("#grand-total").textContent = grand;
 }
 
-for (var i = 0; i < topScoreList.length; i++) {
-  topScoreList[i].addEventListener("change", addTopScores);
-}
-
-for (var i = 0; i < botScoreList.length; i++) {
-  botScoreList[i].addEventListener("change", addBotScores);
-}
-
 function bonusYahtzee() {
   let c1 = document.querySelector("#c1").checked;
   if (c1) {
@@ -122,14 +115,86 @@ function bonusYahtzee() {
   document.querySelector("#bonuses-score").textContent = total;
 }
 
+function generateDie() {
+  let num = Math.ceil(Math.random() * 6);
+  html = `<img src="${num}.png" alt="The ${num} Die" class="dice">`;
+  return html;
+}
+
+function displayDice() {
+  if (!document.querySelector("#first-die").classList.contains("saved")) {
+    html = generateDie();
+    document.querySelector("#first-die").innerHTML = html;
+  }
+
+if (!document.querySelector("#second-die").classList.contains("saved")) {
+  html = generateDie();
+  document.querySelector("#second-die").innerHTML = html;
+}
+if (!document.querySelector("#third-die").classList.contains("saved")) {
+  html = generateDie();
+  document.querySelector("#third-die").innerHTML = html;
+}
+if (!document.querySelector("#fourth-die").classList.contains("saved")) {
+  html = generateDie();
+  document.querySelector("#fourth-die").innerHTML = html;
+}
+if (!document.querySelector("#fifth-die").classList.contains("saved")) {
+  html = generateDie();
+  document.querySelector("#fifth-die").innerHTML = html;
+}
+}
+
+for (var i = 0; i < topScoreList.length; i++) {
+  topScoreList[i].addEventListener("change", addTopScores);
+}
+
+for (var i = 0; i < botScoreList.length; i++) {
+  botScoreList[i].addEventListener("change", addBotScores);
+}
+
+function saveDie(thing, index) {
+  thing[index].classList.toggle("saved");
+}
+
+document.querySelector("#first-die").addEventListener("click", () => {
+  saveDie(allDice, 0);
+});
+document.querySelector("#second-die").addEventListener("click", () => {
+  saveDie(allDice, 1);
+});
+document.querySelector("#third-die").addEventListener("click", () => {
+  saveDie(allDice, 2);
+});
+document.querySelector("#fourth-die").addEventListener("click", () => {
+  saveDie(allDice, 3);
+});
+document.querySelector("#fifth-die").addEventListener("click", () => {
+  saveDie(allDice, 4);
+});
+
+document.querySelector("#reset").addEventListener("click", () => {
+  location.reload();
+});
+
+document.querySelector("#roll-dice").addEventListener("click", () => {
+  displayDice();
+  setTimeout(displayDice, 125);
+  setTimeout(displayDice, 250);
+  setTimeout(displayDice, 375);
+  setTimeout(displayDice, 500);
+});
+
 document.querySelector("#c1").addEventListener("click", () => {
   bonusYahtzee();
   addGrandTotal();
 });
+
 document.querySelector("#c2").addEventListener("click", () => {
   bonusYahtzee();
   addGrandTotal();
 });
+
 document.querySelector("#c3").addEventListener("click", () => {
   bonusYahtzee();
   addGrandTotal();

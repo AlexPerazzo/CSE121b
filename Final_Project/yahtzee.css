@@ -20,3 +20,30 @@ body {
 .boxes {
     margin-top: 27px;
 }
+
+.dice {
+    width: 30%;
+    border: 3px solid white;
+}
+
+/* #second-die {
+    border: 10 solid black;
+} */
+
+.dice:hover {
+    border: 3px solid yellow;
+    border-radius: 13px;
+}
+
+.saved img {
+    border: 3px solid green;
+    border-radius: 13px;
+}
+
+#dice {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* align-content: right; */
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
