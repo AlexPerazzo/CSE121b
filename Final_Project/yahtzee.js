@@ -157,6 +157,19 @@ function saveDie(thing, index) {
   thing[index].classList.toggle("saved");
 }
 
+function resetDice() {
+  savedList = document.querySelectorAll(".saved");
+  savedList.forEach(element => {
+    element.classList.remove("saved");
+
+  });
+  document.querySelector("#first-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+  document.querySelector("#second-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+  document.querySelector("#third-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+  document.querySelector("#fourth-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+  document.querySelector("#fifth-die").innerHTML = `<img src="1.png" alt="The 1 Die" class="dice">`
+}
+
 document.querySelector("#first-die").addEventListener("click", () => {
   saveDie(allDice, 0);
 });
@@ -176,6 +189,9 @@ document.querySelector("#fifth-die").addEventListener("click", () => {
 document.querySelector("#reset").addEventListener("click", () => {
   location.reload();
 });
+
+document.querySelector("#reset-dice").addEventListener("click", resetDice);
+
 
 document.querySelector("#roll-dice").addEventListener("click", () => {
   displayDice();
